@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.new_better.controllers.QueueController"
+      spacing="10" styleClass="queue-panel"
+      stylesheets="@../css/queue_panel.css">
+
+    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+
+    <Label text="Queue" styleClass="queue-title"/>
+    <Button text="Clear Queue" onAction="#handleClearQueue" styleClass="clear-queue-btn"/>
+
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="queue-scroll">
+        <VBox fx:id="queueContainer" spacing="5">
+            <padding>
+                <Insets bottom="120"/>
+            </padding>
+        </VBox>
+    </ScrollPane>
+
+</VBox>

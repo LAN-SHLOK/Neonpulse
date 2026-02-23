@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.new_better.controllers.AllSongsController"
+      spacing="15"
+      styleClass="playlist-page"
+      VBox.vgrow="ALWAYS">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <ScrollPane fitToWidth="true"
+                VBox.vgrow="ALWAYS"
+                styleClass="content-scroll">
+
+        <VBox fx:id="songListContainer"
+              spacing="5"
+              styleClass="song-list">
+            <padding>
+                <Insets bottom="120"/>
+            </padding>
+        </VBox>
+
+    </ScrollPane>
+
+</VBox>

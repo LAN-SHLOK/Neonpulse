@@ -1,0 +1,9 @@
+.idea/
+out/
+*.iml
+target/
+*.jar
+*.zip
+installer/
+*.bat
+output.txt

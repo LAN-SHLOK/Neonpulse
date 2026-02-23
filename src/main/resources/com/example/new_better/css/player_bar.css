@@ -1,0 +1,150 @@
+/* =================================================================
+   THE ULTIMATE IOS PLAYER BAR (SVG EDITION)
+   ================================================================= */
+
+.player-bar {
+    -fx-background-color: rgba(28, 28, 30, 0.9); /* Premium iOS Dark */
+    -fx-background-radius: 25 25 0 0;
+    -fx-padding: 0; /* Let slider hit the top edge */
+    -fx-border-color: rgba(255, 255, 255, 0.1) transparent transparent transparent;
+    -fx-border-width: 0.5;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 30, 0, 0, -10);
+}
+
+/* --- PROGRESS SLIDER (EDGE TO EDGE) --- */
+.ios-progress-slider {
+    -fx-padding: -5 0 0 0;
+}
+.ios-progress-slider .track { -fx-background-color: rgba(255,255,255,0.1); -fx-pref-height: 3; }
+.ios-progress-slider .bar { -fx-background-color: #0A84FF; } /* iOS Blue */
+.ios-progress-slider .thumb { -fx-opacity: 0; }
+.ios-progress-slider:hover .thumb { -fx-opacity: 1; -fx-scale-x: 0.8; -fx-scale-y: 0.8; }
+
+/* --- ICON STYLING (SVG) --- */
+.player-btn {
+    -fx-background-color: transparent;
+    -fx-padding: 10;
+    -fx-cursor: hand;
+}
+
+.player-btn:hover { -fx-scale-x: 1.1; -fx-scale-y: 1.1; }
+
+.icon-svg {
+    -fx-fill: white;
+    -fx-opacity: 0.8;
+}
+
+.player-btn:hover .icon-svg { -fx-opacity: 1.0; }
+
+/* --- THE BIG PLAY CIRCLE --- */
+.play-btn-circle {
+    -fx-background-color: white;
+    -fx-background-radius: 50%;
+    -fx-min-width: 48;
+    -fx-min-height: 48;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 15, 0, 0, 5);
+}
+
+.play-icon-svg {
+    -fx-fill: black; /* Contrast against white circle */
+}
+
+/* --- TYPOGRAPHY --- */
+.song-name-label { -fx-text-fill: white; -fx-font-size: 15px; -fx-font-weight: bold; }
+.artist-name-label { -fx-text-fill: #8e8e93; -fx-font-size: 13px; }
+.context-menu {
+    -fx-background-color: rgba(30, 30, 30, 0.98); /* Dark Glass */
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.1);
+    -fx-border-radius: 12;
+    -fx-padding: 5;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 15, 0, 0, 8);
+}
+
+.menu-item .label {
+    -fx-text-fill: white;
+    -fx-font-family: "SF Pro Display", "Segoe UI";
+    -fx-padding: 8 20;
+}
+
+.menu-item:focused {
+    -fx-background-color: #0A84FF; /* iOS Blue Accent */
+    -fx-background-radius: 8;
+}
+/* =================================================================
+   IOS STYLE DOWNLOAD TOAST (DYNAMIC ISLAND)
+   ================================================================= */
+
+.ios-toast {
+    -fx-background-color: rgba(45, 45, 45, 0.95); /* Translucent Dark Glass */
+    -fx-text-fill: white;
+    -fx-padding: 12 28;
+    -fx-background-radius: 25; /* Highly rounded pill shape */
+    -fx-font-family: "SF Pro Display", "Segoe UI";
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+
+    /* High elevation shadow for depth */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 20, 0, 0, 10);
+
+    /* Subtle inner border for glass effect */
+    -fx-border-color: rgba(255, 255, 255, 0.15);
+    -fx-border-radius: 25;
+    -fx-border-width: 0.8;
+}
+
+/* Optional: Subtle glow when download is active */
+.ios-toast:showing {
+    -fx-border-color: rgba(10, 132, 255, 0.5); /* iOS Blue glow */
+}
+/* =================================================================
+   THE PREMIUM IOS ALERT (GLASS EDITION)
+   ================================================================= */
+
+.dialog-pane {
+    -fx-background-color: rgba(30, 30, 30, 0.9); /* Dark Glass */
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(255, 255, 255, 0.1);
+    -fx-border-radius: 20;
+    -fx-border-width: 0.5;
+}
+
+/* Header Text (Success/Error) */
+.dialog-pane .header-panel {
+    -fx-background-color: transparent;
+}
+.dialog-pane .header-panel .label {
+    -fx-text-fill: white;
+    -fx-font-family: "SF Pro Display", "Segoe UI";
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+}
+
+/* Content Text */
+.dialog-pane .content {
+    -fx-text-fill: #EBEBF5; /* Sub-headline color */
+    -fx-font-size: 13px;
+}
+
+/* Buttons (iOS Blue) */
+.dialog-pane .button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #0A84FF; /* iOS Blue Accent */
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+.dialog-pane .button:hover {
+    -fx-background-color: rgba(10, 132, 255, 0.1);
+    -fx-background-radius: 10;
+}
+.icon-trash {
+    -fx-shape: "M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z";
+    -fx-background-color: #ff3b30; /* Red Color */
+}
+.time-label {
+    -fx-text-fill: #b3b3b3;   /* Light gray color */
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI", sans-serif; /* Matches Windows system font */
+}

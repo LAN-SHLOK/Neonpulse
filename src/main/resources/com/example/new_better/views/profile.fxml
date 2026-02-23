@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.new_better.controllers.ProfileController"
+      alignment="TOP_CENTER" spacing="20" styleClass="profile-view">
+
+    <padding><Insets top="40" right="20" bottom="20" left="20"/></padding>
+
+    <ImageView fx:id="profileImageView" fitWidth="150" fitHeight="150"
+               preserveRatio="false" styleClass="profile-image-large">
+        <clip>
+            <Circle radius="75" centerX="75" centerY="75"/>
+        </clip>
+    </ImageView>
+
+    <Button text="Change Profile Picture" onAction="#handleChangeProfilePicture" styleClass="change-picture-btn"/>
+
+    <Label fx:id="usernameLabel" text="Username" styleClass="profile-username"/>
+    <Label fx:id="emailLabel" text="email@example.com" styleClass="profile-email"/>
+
+</VBox>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.new_better.controllers.LoginController"
+      alignment="CENTER"
+      spacing="20"
+      styleClass="auth-container"
+      style="-fx-background-color: #0f0f0f;">
+
+    <Text text="NeonPulse" styleClass="app-title"/>
+    <Text text="Login to your account" styleClass="auth-subtitle"/>
+
+    <VBox fx:id="formContainer" spacing="15" styleClass="auth-form">
+        <TextField fx:id="usernameField" promptText="Username" styleClass="auth-field"/>
+        <PasswordField fx:id="passwordField" promptText="Password" styleClass="auth-field"/>
+        <Label fx:id="errorLabel" styleClass="error-label" text=""/>
+        <Button fx:id="loginButton" text="Login" onAction="#handleLogin" styleClass="auth-button"/>
+        <Button text="Create Account" onAction="#handleGoToSignup" styleClass="auth-link-button"/>
+    </VBox>
+
+</VBox>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.new_better.controllers.PlaylistPageController"
+      spacing="20"
+      styleClass="center-area">
+    <padding>
+        <Insets top="20" right="30" bottom="20" left="30"/>
+    </padding>
+
+    <HBox spacing="15" alignment="CENTER_LEFT" prefHeight="50">
+
+        <Button fx:id="downloadBtn"
+                text="⬇ Download"
+                onAction="#handleDownload"
+                styleClass="download-btn">
+            <tooltip>
+                <Tooltip text="Download this playlist for offline use"/>
+            </tooltip>
+        </Button>
+
+        <Region prefWidth="20" />
+        <Separator orientation="VERTICAL" />
+        <Region prefWidth="20" />
+
+        <Button fx:id="infinityBtn"
+                text="♾"
+                onAction="#handleInfinityMode"
+                styleClass="control-btn">
+            <tooltip>
+                <Tooltip text="Infinity Mode (Loop Playlist)"/>
+            </tooltip>
+        </Button>
+
+        <Button fx:id="jumpBackBtn"
+                text="⏪"
+                onAction="#handleJumpBack"
+                styleClass="control-btn">
+            <tooltip>
+                <Tooltip text="Jump Back 10 Seconds"/>
+            </tooltip>
+        </Button>
+
+        <Button fx:id="jumpAheadBtn"
+                text="⏩"
+                onAction="#handleJumpAhead"
+                styleClass="control-btn">
+            <tooltip>
+                <Tooltip text="Jump Ahead 10 Seconds"/>
+            </tooltip>
+        </Button>
+
+    </HBox>
+
+    <ScrollPane fitToWidth="true"
+                VBox.vgrow="ALWAYS"
+                styleClass="content-scroll"
+                hbarPolicy="NEVER">
+
+        <VBox fx:id="songListContainer"
+              spacing="8"
+              styleClass="song-list">
+            <padding>
+                <Insets bottom="120"/>
+            </padding>
+        </VBox>
+
+    </ScrollPane>
+
+</VBox>

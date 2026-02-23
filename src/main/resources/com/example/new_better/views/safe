@@ -1,0 +1,577 @@
+/* =================================================================
+   GLOBAL IOS THEME - NEON PULSE EDITION
+   ================================================================= */
+
+.app-root {
+    -fx-background-color: #000000; /* True Black for OLED feel */
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+/* --- IOS SCROLLPANES (Invisible Backgrounds) --- */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent; /* Fixes the White Block issue */
+}
+
+/* --- IOS SCROLLBARS (Minimalist) --- */
+.scroll-bar {
+    -fx-background-color: transparent;
+    -fx-block-increment: 20;
+}
+.scroll-bar:vertical { -fx-pref-width: 8; }
+.scroll-bar:horizontal { -fx-pref-height: 8; }
+
+.scroll-bar .track {
+    -fx-background-color: transparent;
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: rgba(255, 255, 255, 0.15); /* Subtle Grey */
+    -fx-background-radius: 4;
+}
+.scroll-bar .thumb:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* --- IOS BUTTONS (Pill Shapes, No Borders) --- */
+.button {
+    -fx-background-radius: 30; /* The iOS "Pill" Shape */
+    -fx-background-insets: 0;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/* Primary Action (Gradient) */
+.download-btn {
+    -fx-background-color: linear-gradient(to right, #FF2D55, #FF9500); /* Apple Music Pink/Orange */
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-padding: 8 24;
+    -fx-effect: dropshadow(gaussian, rgba(255, 45, 85, 0.4), 15, 0, 0, 4);
+}
+.download-btn:hover {
+    -fx-opacity: 0.9;
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+/* Secondary Actions (Glass Pills) */
+.control-btn, .song-list .button {
+    -fx-background-color: rgba(255, 255, 255, 0.12); /* Glassy Grey */
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-padding: 6 16;
+}
+.control-btn:hover, .song-list .button:hover {
+    -fx-background-color: white;
+    -fx-text-fill: black; /* Inverts on hover like iOS */
+}
+
+/* --- IOS INPUTS (Search Bar) --- */
+.text-field, .search-bar {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #8e8e93; /* Apple Placeholder Grey */
+    -fx-background-radius: 10; /* Apple Search Bar Radius */
+    -fx-background-insets: 0;
+    -fx-padding: 8 12;
+    -fx-font-size: 14px;
+}
+.text-field:focused, .search-bar:focused {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    /* No border, just slightly lighter background */
+}
+
+/* --- TABLE VIEWS (Clean Lists) --- */
+.table-view, .tree-table-view, .list-view {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+.table-row-cell {
+    -fx-background-color: transparent;
+    -fx-cell-size: 60px; /* Taller rows for touch-friendly feel */
+    -fx-border-color: transparent transparent rgba(255, 255, 255, 0.1) transparent; /* Thin separator */
+}
+.table-row-cell:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+}
+.table-cell {
+    -fx-text-fill: white;
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* --- PLAYER BAR (Floating Dock) --- */
+.player-bar-container {
+    -fx-background-color: rgba(20, 20, 20, 0.95); /* Nearly opaque */
+    -fx-background-radius: 0;
+    -fx-border-color: rgba(255, 255, 255, 0.1) transparent transparent transparent;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 20, 0, 0, -5);
+}
+
+/* --- WINDOW CONTROLS (Traffic Lights) --- */
+.window-btn {
+    -fx-background-radius: 50%; /* Circles */
+    -fx-min-width: 12px;
+    -fx-min-height: 12px;
+    -fx-max-width: 12px;
+    -fx-max-height: 12px;
+    -fx-padding: 0;
+    -fx-background-color: #3a3a3c;
+    -fx-text-fill: transparent; /* Hide text unless hovered */
+}
+.window-btn:hover { -fx-text-fill: rgba(0,0,0,0.5); }
+
+.close-btn { -fx-background-color: #FF453A; } /* iOS Red */
+.minimize-btn { -fx-background-color: #FFD60A; } /* iOS Yellow */
+.close-btn:hover { -fx-background-color: #FF6961; }
+
+/* Layout Classes */
+.center-area { -fx-background-color: #000000; }
+.top-bar { -fx-background-color: transparent; -fx-padding: 15; }
+.sidebar { -fx-background-color: #121212; -fx-background-radius: 0 20 20 0; }
+
+/* --- PLAYLIST GRID CONTAINER --- */
+.playlist-grid {
+    -fx-background-color: transparent;
+}
+
+/* --- THE PLAYLIST CARD (SQUARE BUTTONS) --- */
+.playlist-card {
+    -fx-background-color: rgba(255, 255, 255, 0.08); /* Glassy Dark */
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-alignment: BOTTOM_LEFT; /* Text at bottom left like Apple Music */
+    -fx-padding: 15;
+    -fx-mouse-transparent: true;
+    /* SQUARE SHAPE */
+    -fx-min-width: 160px;
+    -fx-min-height: 160px;
+    -fx-max-width: 160px;
+    -fx-max-height: 160px;
+
+    -fx-background-radius: 20; /* Soft corners */
+    -fx-cursor: hand;
+    -fx-wrap-text: true;
+
+    /* SHADOW */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0, 0, 4);
+}
+
+/* HOVER EFFECT */
+.playlist-card:hover {
+    -fx-background-color: linear-gradient(to bottom right, #FF2D55, #FF9500); /* Neon Gradient */
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(gaussian, rgba(255, 45, 85, 0.5), 20, 0, 0, 5);
+}
+/* --- SIDEBAR PROFILE FOOTER --- */
+.profile-section {
+    -fx-border-color: rgba(255, 255, 255, 0.1) transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+    -fx-padding: 20;
+}
+
+/* The White Ring around the image */
+.profile-ring {
+    -fx-fill: transparent;
+    -fx-stroke: rgba(255, 255, 255, 0.3);
+    -fx-stroke-width: 2;
+}
+
+/* The Logout Button (Looks like Text) */
+.sidebar-logout-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ff5e5e; /* iOS Red for 'Danger/Exit' actions */
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 0;
+}
+
+.sidebar-logout-btn:hover {
+    -fx-text-fill: #ff8585; /* Lighter red on hover */
+    -fx-underline: true;
+}
+/* WINDOW BUTTONS */
+.window-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #888; /* Grey text */
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-min-width: 30px;
+    -fx-min-height: 30px;
+}
+
+.window-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-text-fill: white;
+}
+
+.close-btn:hover {
+    -fx-background-color: #FF453A; /* Red on hover */
+    -fx-text-fill: white;
+}
+/* =================================================================
+   IOS SONG ROW STYLE (Match image_df888a.png)
+   ================================================================= */
+
+/* THE ROW CONTAINER */
+.song-row {
+    -fx-background-color: transparent; /* Seamless black look */
+    -fx-padding: 8 15;
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 15;
+    -fx-border-color: transparent transparent rgba(255,255,255,0.05) transparent; /* Subtle separator */
+    -fx-border-width: 0 0 1 0;
+}
+
+.song-row:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.05); /* Highlight on hover */
+    -fx-cursor: hand;
+}
+
+/* TEXT STYLES */
+.song-title {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.song-detail { /* Genre & Time */
+    -fx-text-fill: #98989d; /* iOS Grey */
+    -fx-font-size: 13px;
+}
+
+/* --- BUTTONS --- */
+
+/* 1. CIRCULAR PLAY BUTTON (Left side) */
+.play-round-btn {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-text-fill: white;
+    -fx-font-size: 10px; /* Icon size */
+    -fx-min-width: 35px;
+    -fx-min-height: 35px;
+    -fx-max-width: 35px;
+    -fx-max-height: 35px;
+    -fx-background-radius: 50%; /* Perfect Circle */
+    -fx-cursor: hand;
+    -fx-alignment: CENTER;
+    -fx-padding: 0 0 0 2; /* Slight offset to center the triangle visually */
+}
+
+.play-round-btn:hover {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+/* 2. ACTION BUTTONS (+ and Heart) */
+.action-btn {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-min-width: 35px;
+    -fx-min-height: 35px;
+    -fx-max-width: 35px;
+    -fx-max-height: 35px;
+    -fx-background-radius: 12; /* Rounded Squircle */
+    -fx-cursor: hand;
+    -fx-alignment: CENTER;
+}
+
+.action-btn:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-text-fill: #FF2D55; /* Neon Pink hover */
+}
+
+/* Specific Heart Button Style (Active) */
+.action-btn.liked {
+    -fx-text-fill: #FF2D55; /* Red Heart */
+    -fx-background-color: rgba(255, 45, 85, 0.15);
+}
+/* =================================================================
+   TRUE IOS BUTTONS (Container + Icon)
+   ================================================================= */
+
+/* 1. THE CONTAINER (The Round Button) */
+.ios-btn {
+    -fx-background-color: rgba(255, 255, 255, 0.08); /* Dark Glass Grey */
+    -fx-background-radius: 50%; /* Perfect Circle */
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+    -fx-max-width: 40px;
+    -fx-max-height: 40px;
+    -fx-alignment: CENTER;
+    -fx-cursor: hand;
+    -fx-content-display: GRAPHIC_ONLY; /* Hide any text */
+    -fx-padding: 0;
+}
+
+/* Hover Effect: Button turns White */
+.ios-btn:hover {
+    -fx-background-color: white;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+/* 2. THE ICONS (The Shapes Inside) */
+.icon-region {
+    -fx-background-color: white; /* Default Icon Color */
+    -fx-min-width: 14px;
+    -fx-min-height: 14px;
+    -fx-max-width: 14px;
+    -fx-max-height: 14px;
+    -fx-scale-shape: true;
+}
+
+/* Hover Effect: Icon turns Black (Invert) */
+.ios-btn:hover .icon-region {
+    -fx-background-color: black;
+}
+
+/* 3. SHAPE DEFINITIONS (SVG Paths) */
+.icon-play {
+    -fx-shape: "M8 5v14l11-7z";
+    -fx-translate-x: 1; /* Optical center correction */
+}
+
+.icon-plus {
+    -fx-shape: "M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z";
+}
+
+.icon-heart {
+    -fx-shape: "M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z";
+}
+
+/* 4. LIKED STATE (Red Heart) */
+.ios-btn.liked .icon-heart {
+    -fx-background-color: #FF2D55; /* iOS Red */
+}
+.ios-btn.liked:hover .icon-heart {
+    -fx-background-color: #FF2D55; /* Keep Red on hover */
+}
+/* MINUS ICON (For Remove Button) */
+.icon-minus {
+    /* Simple horizontal line SVG path */
+    -fx-shape: "M5 11h14v2H5z";
+}
+
+/* Make the Remove button turn Red on hover */
+.ios-btn:hover .icon-minus {
+    -fx-background-color: #FF453A; /* iOS Red */
+}
+/* --- FIX SCROLLPANE CORNER & BACKGROUND --- */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* This is the specific fix for the white box in the corner */
+.scroll-pane .corner {
+    -fx-background-color: transparent;
+}
+
+/* Optional: Make scrollbar darker to match your theme */
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #333;
+    -fx-background-radius: 5;
+}
+
+}
+/* --- PLAYLIST CARD GRID --- */
+/* --- THE PLAYLIST CARD (SQUARE BUTTONS) --- */
+.playlist-card {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-alignment: BOTTOM_LEFT;
+    -fx-padding: 15;
+
+    /* 🔥 REMOVE THIS LINE: -fx-mouse-transparent: true; */
+    /* ADD THIS INSTEAD: */
+    -fx-pick-on-bounds: true;
+
+    -fx-min-width: 160px;
+    -fx-min-height: 160px;
+    -fx-max-width: 160px;
+    -fx-max-height: 160px;
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0, 0, 4);
+}
+
+.playlist-card:hover {
+    -fx-background-color: #2a2a2a;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.system-card {
+    -fx-background-color: linear-gradient(to bottom right, #00d9ff, #0055ff);
+}
+
+.playlist-card-icon {
+    -fx-font-size: 40;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-opacity: 0.8;
+}
+
+.playlist-card-name {
+    -fx-font-size: 16;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.playlist-grid {
+    -fx-background-color: transparent;
+    -fx-pref-height: -1; /* Allows it to grow with content */
+}
+
+.ios-dialog {
+    -fx-background-color: #1c1c1e;
+    -fx-background-radius: 25;
+    -fx-border-color: rgba(255, 255, 255, 0.1);
+    -fx-border-radius: 25;
+    -fx-padding: 30;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 30, 0, 0, 10);
+}
+
+.ios-header { -fx-text-fill: white; -fx-font-size: 19px; -fx-font-weight: bold; }
+
+.ios-text-field {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+}
+
+.ios-dialog-btn, .ios-dialog-btn-bold {
+    -fx-background-color: transparent;
+    -fx-text-fill: #0A84FF;
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+}
+.ios-dialog-btn-bold { -fx-font-weight: bold; }
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="playerBar"
+      styleClass="player-bar"
+      stylesheets="@../css/player_bar.css"
+      xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.new_better.controllers.PlayerBarController">
+
+    <Slider fx:id="progressSlider"
+            styleClass="ios-progress-slider"
+            prefHeight="4"
+            minWidth="200" />
+
+    <HBox alignment="CENTER" prefHeight="85">
+        <padding>
+            <Insets left="25" right="25" />
+        </padding>
+
+        <HBox alignment="CENTER_LEFT" spacing="15" prefWidth="300" HBox.hgrow="SOMETIMES">
+            <VBox alignment="CENTER_LEFT" spacing="2">
+                <Label fx:id="songTitleLabel" styleClass="song-name-label" text="No song playing" />
+                <Label fx:id="songGenreLabel" styleClass="artist-name-label" text="Artist Name" />
+            </VBox>
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="20" HBox.hgrow="ALWAYS">
+
+            <Button fx:id="shuffleBtn" onAction="#handleShuffle" styleClass="ios-btn">
+                <graphic>
+                    <Region styleClass="icon-region, icon-shuffle"/>
+                </graphic>
+            </Button>
+
+            <Button onAction="#handlePrevious" styleClass="ios-btn">
+                <graphic>
+                    <Region styleClass="icon-region, icon-prev"/>
+                </graphic>
+            </Button>
+
+            <Button fx:id="playPauseBtn" onAction="#handlePlayPause" styleClass="ios-btn">
+                <graphic>
+                    <Region fx:id="playPauseIconRegion" styleClass="icon-region, icon-play"/>
+                </graphic>
+            </Button>
+
+            <Button onAction="#handleNext" styleClass="ios-btn">
+                <graphic>
+                    <Region styleClass="icon-region, icon-next"/>
+                </graphic>
+            </Button>
+
+            <Button fx:id="repeatBtn" onAction="#handleRepeat" styleClass="ios-btn">
+                <graphic>
+                    <Region styleClass="icon-region, icon-repeat"/>
+                </graphic>
+            </Button>
+
+        </HBox>
+
+        <HBox alignment="CENTER_RIGHT" spacing="15" prefWidth="300" HBox.hgrow="SOMETIMES">
+
+            <Button fx:id="likeBtn" onAction="#handleLike" styleClass="ios-btn">
+                <graphic>
+                    <Region styleClass="icon-region, icon-heart"/>
+                </graphic>
+            </Button>
+
+            <HBox alignment="CENTER" spacing="10" styleClass="volume-container">
+                <Button styleClass="ios-btn">
+                    <graphic>
+                        <Region styleClass="icon-region, icon-volume-low"/>
+                    </graphic>
+                </Button>
+                <Slider fx:id="volumeSlider" prefWidth="100" styleClass="ios-volume-slider" />
+            </HBox>
+
+            <Button fx:id="queueBtn" onAction="#handleToggleQueue" styleClass="ios-btn">
+                <graphic>
+                    <Region styleClass="icon-region, icon-queue"/>
+                </graphic>
+            </Button>
+        </HBox>
+    </HBox>
+
+    <VBox fx:id="queuePanelContainer" visible="false" managed="false" />
+
+</VBox>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.new_better.controllers.PlaylistController"
+      spacing="20"
+      styleClass="center-area">
+
+    <padding><Insets top="30" right="30" bottom="30" left="30"/></padding>
+
+    <HBox alignment="CENTER_LEFT">
+        <Label text="Your Playlists" styleClass="page-title"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="+ Create New"
+                onAction="#handleCreatePlaylist"
+                styleClass="download-btn"/>
+    </HBox>
+
+    <ScrollPane fitToWidth="true"
+                VBox.vgrow="ALWAYS"
+                styleClass="content-scroll">
+
+        <FlowPane fx:id="playlistsContainer"
+                  hgap="20"
+                  vgap="20"
+                  styleClass="playlist-grid">
+            <padding><Insets top="10" left="5" bottom="120"/></padding>
+        </FlowPane>
+
+    </ScrollPane>
+
+</VBox>

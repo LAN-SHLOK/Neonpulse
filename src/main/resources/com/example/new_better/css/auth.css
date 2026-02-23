@@ -1,0 +1,150 @@
+/* =================================================================
+   IOS AUTH THEME - FLOATING GLASS
+   ================================================================= */
+
+/* BACKGROUND LAYOUT */
+.auth-root {
+    /* PREMIUM DARK GRADIENT BG */
+    /* This creates a subtle, moody dark background that fits the theme */
+    -fx-background-color: linear-gradient(to bottom right, #050505, #1c1c24);
+
+    /* --- OPTIONAL: Use an image instead? Uncomment below --- */
+    /* -fx-background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop'); */
+    /* -fx-background-size: cover; */
+    /* -fx-background-position: center; */
+}
+
+/* THE GLASS CARD (Floating iOS Look) */
+.auth-container {
+    -fx-background-color: rgba(30, 30, 30, 0.70); /* Slightly more transparent dark glass */
+    -fx-background-radius: 24; /* Even smoother iOS corners */
+
+    /* The "Frost" Border */
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-border-width: 1px;
+    -fx-border-radius: 24;
+
+    /* --- THE ENHANCED FLOATING EFFECT --- */
+    /* Softer, larger shadow with more vertical lift (dy: 20) */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.45), 70, 0, 0, 20);
+
+    -fx-padding: 45; /* Slightly more breathing room */
+}
+
+/* TYPOGRAPHY */
+.app-title {
+    -fx-fill: white;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI", system-ui, sans-serif;
+    /* Subtle glow to pop off the dark glass */
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.2), 10, 0, 0, 0);
+}
+
+.auth-subtitle {
+    -fx-fill: #98989d; /* Apple System Grey */
+    -fx-font-size: 15px;
+}
+
+/* INPUT FIELDS (Smooth Grey Pills) */
+.auth-field {
+    -fx-background-color: rgba(255, 255, 255, 0.07); /* Translucent Grey */
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #8e8e93; /* Placeholder Grey */
+
+    -fx-background-radius: 14; /* iOS Input Radius */
+    -fx-padding: 14 18;
+    -fx-font-size: 14px;
+
+    -fx-pref-width: 300px;
+    -fx-max-width: 300px;
+
+    /* Remove Default JavaFX Borders */
+    -fx-background-insets: 0;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/* Input Focus State */
+.auth-field:focused {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-border-color: #0A84FF; /* iOS System Blue Focus Ring */
+    -fx-border-radius: 14;
+    -fx-border-width: 1.5;
+    /* Subtle blue glow on focus */
+    -fx-effect: dropshadow(gaussian, rgba(10, 132, 255, 0.2), 10, 0, 0, 0);
+}
+
+/* PRIMARY BUTTON (Apple Blue) */
+.auth-button {
+    -fx-background-color: #007AFF; /* Apple System Blue */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+
+    -fx-background-radius: 14; /* Matches Input Radius */
+    -fx-padding: 12 0;
+    -fx-cursor: hand;
+
+    -fx-pref-width: 300px;
+    -fx-max-width: 300px;
+
+    /* Button also floats slightly */
+    -fx-effect: dropshadow(gaussian, rgba(0, 122, 255, 0.3), 15, 0, 0, 4);
+}
+
+.auth-button:hover {
+    -fx-background-color: #0062CC; /* Darker Blue on Hover */
+    -fx-scale-x: 1.01;
+    -fx-scale-y: 1.01;
+    -fx-effect: dropshadow(gaussian, rgba(0, 122, 255, 0.5), 20, 0, 0, 6);
+}
+
+/* SECONDARY LINK BUTTONS (Login/Signup text) */
+.auth-link-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #0A84FF; /* Blue Text */
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+    -fx-padding: 5 10;
+}
+
+.auth-link-button:hover {
+    -fx-underline: true;
+    -fx-text-fill: #409CFF; /* Lighter Blue */
+}
+
+/* ERROR MESSAGE */
+.error-label {
+    -fx-text-fill: #FF453A; /* iOS System Red */
+    -fx-font-size: 12px;
+}
+
+/* PROFILE IMAGE PREVIEW (Circular) */
+.profile-preview {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 15, 0, 0, 4);
+}
+
+/* WINDOW CONTROLS (Top Right) */
+.window-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #8e8e93;
+    -fx-font-family: "Segoe UI Symbol";
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-min-width: 35px;
+    -fx-min-height: 30px;
+}
+
+.minimize-btn:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+}
+
+.close-btn:hover {
+    -fx-background-color: #FF453A; /* iOS Red */
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+}

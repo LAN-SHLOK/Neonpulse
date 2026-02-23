@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.new_better.controllers.LikedSongsController"
+            fitToWidth="true" styleClass="content-scroll">
+
+    <VBox fx:id="songListContainer" spacing="5" styleClass="song-list">
+        <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    </VBox>
+
+</ScrollPane>

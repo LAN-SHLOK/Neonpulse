@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.new_better.controllers.MainController"
+            styleClass="app-root"
+            prefWidth="1200" prefHeight="800">
+
+    <top>
+        <HBox spacing="15" alignment="CENTER_LEFT" styleClass="top-bar" prefHeight="70">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="20"/>
+            </padding>
+
+            <Label text="NeonPulse" styleClass="logo-text"/>
+
+            <Region prefWidth="30"/>
+
+            <TextField fx:id="searchField"
+                       promptText="Search songs..."
+                       HBox.hgrow="ALWAYS"
+                       maxWidth="600"
+                       styleClass="search-bar"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Label fx:id="pageTitleLabel"
+                   text="Home"
+                   styleClass="page-title"/>
+
+            <Region prefWidth="20"/>
+
+            <HBox alignment="CENTER" spacing="10">
+                <Button text="Logout" onAction="#handleLogout" styleClass="logout-btn"/>
+
+                <StackPane>
+                    <ImageView fx:id="profileAvatar"
+                               fitWidth="40"
+                               fitHeight="40"
+                               preserveRatio="false"
+                               smooth="true">
+                        <clip>
+                            <Rectangle width="40" height="40" arcWidth="40" arcHeight="40"/>
+                        </clip>
+                    </ImageView>
+                    <Circle radius="20" fill="transparent" stroke="rgba(255,255,255,0.3)" strokeWidth="1"/>
+                </StackPane>
+            </HBox>
+
+            <Region prefWidth="15"/>
+
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="—" onAction="#handleMinimize" styleClass="window-btn, minimize-btn">
+                    <tooltip><Tooltip text="Minimize"/></tooltip>
+                </Button>
+                <Button text="✕" onAction="#handleExit" styleClass="window-btn, close-btn">
+                    <tooltip><Tooltip text="Close"/></tooltip>
+                </Button>
+            </HBox>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox spacing="10" styleClass="sidebar" prefWidth="240">
+            <padding>
+                <Insets top="20" left="15" right="15" bottom="20"/>
+            </padding>
+
+            <Label text="MENU" styleClass="sidebar-header"/>
+
+            <Button text="All Songs" onAction="#loadAllSongs" styleClass="nav-btn" maxWidth="Infinity"/>
+            <Button text="Playlists" onAction="#loadPlaylistView" styleClass="nav-btn" maxWidth="Infinity"/>
+            <Button text="Liked Songs" onAction="#loadLikedSongs" styleClass="nav-btn" maxWidth="Infinity"/>
+            <Button text="Recently Played" onAction="#loadRecentlyPlayed" styleClass="nav-btn" maxWidth="Infinity"/>
+            <Button text="Profile" onAction="#loadProfile" styleClass="nav-btn" maxWidth="Infinity"/>
+
+            <Separator styleClass="sidebar-separator"/>
+
+            <Label text="YOUR PLAYLISTS" styleClass="sidebar-header"/>
+
+            <ScrollPane fx:id="playlistScrollPane"
+                        fitToWidth="true"
+                        styleClass="sidebar-scroll"
+                        prefHeight="200"
+                        minHeight="200"
+                        maxHeight="200"
+                        hbarPolicy="NEVER"
+                        vbarPolicy="AS_NEEDED">
+                <VBox fx:id="playlistList" spacing="5" styleClass="sidebar-list"/>
+            </ScrollPane>
+
+            <Region VBox.vgrow="ALWAYS" />
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="centerContent"
+                   styleClass="center-area"
+                   alignment="TOP_LEFT">
+
+            <VBox fx:id="pageContentContainer" VBox.vgrow="ALWAYS" />
+
+            <VBox fx:id="queuePanelContainer"
+                  visible="false"
+                  managed="false"
+                  styleClass="queue-panel"
+                  style="-fx-background-color: #111111;"
+                  maxWidth="350"
+                  prefWidth="350"
+                  minHeight="400"
+                  prefHeight="600"
+                  StackPane.alignment="TOP_RIGHT">
+
+                <StackPane.margin>
+                    <Insets top="10" right="10" bottom="10" />
+                </StackPane.margin>
+
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label text="Up Next" styleClass="sidebar-header"/>
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button text="✕" onAction="#handleToggle" styleClass="window-btn" />
+                </HBox>
+
+                <Separator styleClass="sidebar-separator" />
+
+                <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" hbarPolicy="NEVER" styleClass="scroll-pane">
+                    <VBox fx:id="queueList" spacing="10">
+                        <padding>
+                            <Insets bottom="120"/>
+                        </padding>
+                    </VBox>
+                </ScrollPane>
+            </VBox>
+        </StackPane>
+    </center>
+
+    <bottom>
+        <StackPane fx:id="playerBarContainer"
+                   prefHeight="110"
+                   minHeight="110"
+                   maxHeight="110"
+                   alignment="BOTTOM_CENTER"
+                   styleClass="player-bar-container"/>
+    </bottom>
+
+</BorderPane>

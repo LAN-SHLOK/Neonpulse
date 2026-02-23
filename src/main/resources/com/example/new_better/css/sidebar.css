@@ -1,0 +1,86 @@
+/* =================================================================
+   IOS SIDEBAR THEME
+   ================================================================= */
+
+/* MAIN CONTAINER */
+.sidebar {
+    -fx-background-color: #000000; /* Matches main background for seamless look */
+    -fx-padding: 20 15; /* Generous padding for breathing room */
+
+    /* Subtle separator line on the right side only */
+    -fx-border-color: transparent rgba(255, 255, 255, 0.1) transparent transparent;
+    -fx-border-width: 0 1 0 0;
+}
+
+/* SECTION HEADERS (e.g., "MENU", "YOUR PLAYLISTS") */
+.sidebar-header {
+    -fx-text-fill: #8e8e93; /* Apple System Grey */
+    -fx-font-weight: bold;
+    -fx-font-size: 11px;
+    -fx-padding: 15 12 8 12; /* Spacing */
+    -fx-opacity: 0.8;
+}
+
+/* NAVIGATION BUTTONS (Home, Library, etc.) */
+.nav-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #a0a0a0; /* Unselected text color */
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 16;
+    -fx-cursor: hand;
+    -fx-background-radius: 10; /* iOS Rounded Pill Shape */
+}
+
+/* Hover State */
+.nav-btn:hover {
+    -fx-text-fill: white;
+    -fx-background-color: rgba(255, 255, 255, 0.1); /* Subtle lighting */
+}
+
+/* Active/Focused State */
+.nav-btn:focused {
+    -fx-text-fill: #FF2D55; /* Neon Pulse Pink/Red Accent */
+    -fx-background-color: rgba(255, 45, 85, 0.15); /* Low opacity accent background */
+}
+
+/* SEPARATOR LINE */
+.sidebar-separator .line {
+    -fx-border-color: rgba(255, 255, 255, 0.1); /* Very subtle line */
+    -fx-border-width: 1 0 0 0;
+}
+
+/* --- PLAYLIST SCROLL AREA --- */
+
+/* 1. Container Fixes */
+.sidebar-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-padding: 0;
+}
+.sidebar-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* 2. Playlist Items List */
+.sidebar-list {
+    -fx-background-color: transparent;
+    -fx-padding: 5 0;
+}
+
+/* 3. Individual Playlist Buttons */
+.sidebar-list .button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #a0a0a0;
+    -fx-alignment: CENTER_LEFT;
+    -fx-cursor: hand;
+    -fx-padding: 8 16;
+    -fx-font-size: 13px;
+    -fx-background-radius: 8;
+}
+
+.sidebar-list .button:hover {
+    -fx-text-fill: white;
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+}
